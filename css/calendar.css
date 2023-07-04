@@ -1,0 +1,16 @@
+.calendarTable{
+    width: 100%;
+    height: calc(100vh - 128px);
+}
+
+.calendarTable td{
+border : 1px solid black ;
+padding: 10px;
+vertical-align: top;
+width: 14.29%;
+height: 20%;
+}
+
+.calendarTable--6weeks{
+    height: 16.66%;
+}
