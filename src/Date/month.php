@@ -73,7 +73,7 @@ class Month
 
     /**
      *est ce que le jour est dans le mois
-     * @param \dateTime $date 
+     * @param \DateTime $date 
      * @return bool
      */
     public function withinMonth(\DateTime $date): bool
