@@ -36,10 +36,15 @@
         <?php
         for ($i = 0; $i < $month->getWeeks(); $i++) { ?>
             <tr>
-                <?php foreach ($month->days as $k => $day) { ?>
-                    <td>
+                <?php 
+                foreach ($month->days as $k => $day) { 
+                    $date = (clone $start)->modify(" + " . ($k + $i * 7) ." days") ;?>
+
+                    <td class="<?= $month->withinMonth($date) ;?> calendar__othermonth">
+
                         <div class="calendar__weekday"> <?= $day; ?></div>
-                        <div class="calendar__day"><?= (clone $start)->modify(" + " . ($k + $i * 7) ." days")->format('d'); ?></div>
+                        <div class="calendar__day"><?=$date->format('d'); ?></div>
+
                     </td>
                 <?php } ?>
 

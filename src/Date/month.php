@@ -8,7 +8,7 @@ class Month
 {
 
     private $months = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
-    public $days = ['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimache'];
+    public $days = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimache'];
     private $month;
     private $year;
 
@@ -69,5 +69,16 @@ class Month
             $weeks = intval($end->format('W'));
         }
         return $weeks;
+    }
+
+    /**
+     *est ce que le jour est dans le mois
+     * @param \dateTime $date 
+     * @return bool
+     */
+    public function withinMonth(\DateTime $date): bool
+    {
+
+        return $this->getStartDay()->format('Y-m ') === $date->format('Y-m');
     }
 }
